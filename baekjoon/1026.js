@@ -1,5 +1,5 @@
 var fs = require("fs");
-var inputs = fs.readFileSync("/dev/stdin", "utf8").toString().split("\n");
+var inputs = fs.readFileSync("/dev/stdin").toString().split("\n");
 
 var inputs = require("fs")
   .readFileSync("/dev/stdin")
