@@ -1,4 +1,4 @@
-var inputs = ["3", "0 0 13 40 0 37", "0 0 3 0 7 4", "1 1 1 1 1 1"];
+var inputs = require("fs").readFileSync("/dev/stdin").toString().split("\n");
 
 for (let i = 1; i <= parseInt(inputs[0]); i++) {
   let input = inputs[i].split(" ").map((x) => parseInt(x, 10));

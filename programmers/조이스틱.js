@@ -1,4 +1,4 @@
-let name = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let name = "JAZ";
 let answer = 0;
 let nowIndex = 0;
 let nowNum = 65;

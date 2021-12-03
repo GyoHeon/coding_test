@@ -1,7 +1,9 @@
-const w = 8;
-const h = 12;
+const w = 5;
+const h = 3;
 let result = w * h;
-const inclination = h / w;
-for (let i = 1; i <= w; i++) {
-  console.log(i);
+const inclination = w / h;
+for (let i = 0; i < h; i++) {
+  const square = Math.ceil((i + 1) * inclination) - Math.floor(i * inclination);
+  result -= square;
 }
+console.log(result);
