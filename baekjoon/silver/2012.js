@@ -4,15 +4,12 @@ let inputs = require("fs")
   .trim()
   .split("\n");
 
-const n = inputs.shift();
+inputs.shift();
 let sum = 0;
 
 const sorter = (a, b) => a - b;
-const parser = (x) => parseInt(x);
-inputs = inputs.sort(sorter).map(parser);
+inputs = inputs.sort(sorter).map(Number);
 
-for (let i = 0; i < n; i++) {
-  sum += Math.abs(inputs[i] - (i + 1));
-}
+sum = inputs.reduce((acc, x, i) => (acc += Math.abs(x - (i + 1))), 0);
 
 console.log(sum);
