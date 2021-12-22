@@ -18,7 +18,6 @@ function solution(bridge_length, weight, truck_weights) {
       bridge.push(0);
       answer++;
     }
-    console.log(bridge);
   }
   return answer + bridge_length;
 }
