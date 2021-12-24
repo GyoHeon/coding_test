@@ -1,9 +1,9 @@
-const w = 5;
-const h = 3;
-let result = w * h;
-const inclination = w / h;
-for (let i = 0; i < h; i++) {
-  const square = Math.ceil((i + 1) * inclination) - Math.floor(i * inclination);
-  result -= square;
+function solution(w, h) {
+  let max, min;
+  w > h ? ((max = w), (min = h)) : ((max = h), (min = w));
+  let i = min;
+  for (; i > 1; i--) {
+    if ((max % i) + (min % i) === 0) break;
+  }
+  return w * h - (w + h - i);
 }
-console.log(result);
