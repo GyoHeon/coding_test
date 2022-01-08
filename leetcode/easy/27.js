@@ -1,15 +1,10 @@
 var removeElement = function (nums, val) {
-  let idx = 0;
-  nums.forEach((x, i) => {
-    if (x === val) {
-      idx++;
-      nums[i] = "*";
-    }
-  });
-
-  nums = nums.filter((x) => x !== "*");
+  const len = nums.length;
+  for (let i = len; i >= 0; i--) {
+    if (nums[i] === val) nums.splice(i, 1);
+  }
   return nums;
 };
 
-const num = [0, 1, 2, 2, 3, 0, 4, 2];
-console.log(removeElement(num, 2));
+const num = [3, 2, 2, 3];
+console.log(removeElement(num, 3));
