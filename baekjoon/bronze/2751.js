@@ -4,6 +4,9 @@ let inputs = require("fs")
   .trim()
   .split("\n")
   .map(Number);
+inputs.shift();
 
+let answer = "";
 inputs.sort((a, b) => a - b);
-inputs.forEach((x) => console.log(x));
+inputs.forEach((x) => (answer += `${x}\n`));
+console.log(answer);
