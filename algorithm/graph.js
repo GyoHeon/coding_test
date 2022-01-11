@@ -1,3 +1,57 @@
+const graph = {
+  a: ["b", "c"],
+  b: ["a", "d"],
+  c: ["a", "g", "h", "i"],
+  d: ["b", "d", "e", "f"],
+  e: ["d"],
+  f: ["d"],
+  g: ["c"],
+  h: ["c"],
+  i: ["c", "j"],
+  j: ["i"],
+};
+// NORMAL DFS
+function DFS(graph, startNode) {
+  let visited = [];
+  let needVisit = [];
+  needVisit.push(startNode);
+
+  while (needVisit.length) {
+    let node = needVisit.pop();
+    if (visited.indexOf(node) === -1) {
+      visited.push(node);
+      needVisit = needVisit.concat(graph[node]);
+    }
+  }
+  return visited;
+}
+
+// RECURSIVE DFS
+function recursiveDFS(graph, v, visited) {
+  visited[v] = true;
+  for (let i of graph[v]) {
+    if (visited.indexOf(i) === -1) {
+      recursiveDFS(graph, i, visited);
+    }
+  }
+}
+
+// BFS
+// # need_visit queue
+// def bfs(graph, start_node):
+//     visited, need_visit = [], []
+
+//     need_visit.append(start_node)
+
+//     while need_visit:
+//         node = need_visit.pop(-1)
+//         if node not in visited:
+//             visited.append(node)
+//             need_visit.extend(graph[node])
+
+//     return visited
+
+// 2D array graph
 // DFS
 
 // BFS
