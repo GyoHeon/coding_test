@@ -15,5 +15,3 @@ function solution(X, Y) {
   else if (Number(result) === 0) return "0";
   return result;
 }
-
-console.log(solution("123", "321"));
