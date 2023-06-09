@@ -11,9 +11,6 @@ function addTwoNumbers(
   l1: ListNode | null,
   l2: ListNode | null
 ): ListNode | null {
-  let first = l1;
-  let second = l2;
-
   let before = 0;
 
   const answer = new ListNode();
