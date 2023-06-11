@@ -1,8 +1,19 @@
 function solution(numbers, target) {
-  var answer = 0;
-  for (let i = 0; i < 2 ** numbers.length; i++) {}
+  let answer = 0;
+
+  function dfs(n, rest) {
+    if (n === numbers.length) {
+      if (rest === target) answer++;
+      return;
+    }
+
+    const num = numbers[n];
+
+    dfs(n + 1, rest + num);
+    dfs(n + 1, rest - num);
+  }
+
+  dfs(0, 0);
+
   return answer;
 }
-
-const numbers = [1, 1, 1, 1, 1];
-const target = 3;
