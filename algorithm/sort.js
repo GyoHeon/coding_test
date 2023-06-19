@@ -15,37 +15,37 @@ console.log("Bubble sort is :", arrBubble);
 
 /************선택 정렬************/
 // 가장 작은 수부터 정렬하는 선택 정렬
-const arrSelect = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8];
+const arrSelection = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8];
 
-for (let i = 0; i < arrSelect.length; i++) {
+for (let i = 0; i < arrSelection.length; i++) {
   let minIndex = i; // 가장 작은 원소의 인덱스
-  for (let j = i + 1; j < arrSelect.length; j++) {
-    if (arrSelect[minIndex] > arrSelect[j]) {
+  for (let j = i + 1; j < arrSelection.length; j++) {
+    if (arrSelection[minIndex] > arrSelection[j]) {
       minIndex = j;
     }
   }
 
   // 스와프(swap)
-  let temp = arrSelect[i]; // 7
-  arrSelect[i] = arrSelect[minIndex]; // 5
-  arrSelect[minIndex] = temp; // 7
+  let temp = arrSelection[i]; // 7
+  arrSelection[i] = arrSelection[minIndex]; // 5
+  arrSelection[minIndex] = temp; // 7
 }
 
-console.log("Select sort is :", arrSelect);
+console.log("Selection sort is :", arrSelection);
 
 /************삽입 정렬************/
 // 0번 인덱스부터 원래 자리로 돌려놓는 삽입 정렬
-const arrInsert = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8];
+const arrInsertion = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8];
 
-for (let i = 1; i < arrInsert.length; i++) {
+for (let i = 1; i < arrInsertion.length; i++) {
   for (let j = i; j > 0; j--) {
     // 인덱스 j부터 1까지 1씩 감소하며 반복
-    if (arrInsert[j] < arrInsert[j - 1]) {
+    if (arrInsertion[j] < arrInsertion[j - 1]) {
       // 한 칸씩 왼쪽으로 이동
       // 스와프(swap)
-      let temp = arrInsert[j];
-      arrInsert[j] = arrInsert[j - 1];
-      arrInsert[j - 1] = temp;
+      let temp = arrInsertion[j];
+      arrInsertion[j] = arrInsertion[j - 1];
+      arrInsertion[j - 1] = temp;
     } else {
       break;
       // 자기보다 작은 데이터를 만나면 그 위치에서 멈춤
@@ -53,7 +53,7 @@ for (let i = 1; i < arrInsert.length; i++) {
   }
 }
 
-console.log("Insert sort is :", arrInsert);
+console.log("Insertion sort is :", arrInsertion);
 
 /************퀵 정렬************/
 // 퀵정렬
